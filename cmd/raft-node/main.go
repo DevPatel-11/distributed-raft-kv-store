@@ -3,10 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
+
 	"os"
 	"os/signal"
-	"strconv"
 	"strings"
 	"syscall"
 

@@ -7,9 +7,9 @@ import (
 
 // Store represents the key-value store state machine
 type Store struct {
-	mu    sync.RWMutex
-	data  map[string][]byte
-	meta  map[string]*Meta
+	mu   sync.RWMutex
+	data map[string][]byte
+	meta map[string]*Meta
 }
 
 // Meta stores metadata about a key
@@ -37,7 +37,7 @@ func (s *Store) Set(key string, value []byte) error {
 
 	s.data[key] = value
 	s.meta[key] = &Meta{
-		Version:   int64(len(s.data)),
+		Version: int64(len(s.data)),
 	}
 
 	return nil

@@ -35,8 +35,8 @@ type LogEntry struct {
 type RaftNode struct {
 	// Persistent state on all servers
 	CurrentTerm int64
-	VotedFor   int
-	Log        []*LogEntry
+	VotedFor    int
+	Log         []*LogEntry
 
 	// Volatile state on all servers
 	CommitIndex int64

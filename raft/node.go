@@ -10,17 +10,17 @@ import (
 // NewRaftNode creates a new Raft node
 func NewRaftNode(nodeID int, clusterNodes map[int]string) *RaftNode {
 	node := &RaftNode{
-		NodeID:      nodeID,
-		CurrentTerm: 0,
-		VotedFor:    -1,
-		Log:         make([]*LogEntry, 0),
-		State:       Follower,
-		CommitIndex: 0,
-		LastApplied: 0,
-		NextIndex:   make(map[int]int64),
-		MatchIndex:  make(map[int]int64),
+		NodeID:       nodeID,
+		CurrentTerm:  0,
+		VotedFor:     -1,
+		Log:          make([]*LogEntry, 0),
+		State:        Follower,
+		CommitIndex:  0,
+		LastApplied:  0,
+		NextIndex:    make(map[int]int64),
+		MatchIndex:   make(map[int]int64),
 		ClusterNodes: clusterNodes,
-		ApplyChan:   make(chan *LogEntry, 100),
+		ApplyChan:    make(chan *LogEntry, 100),
 	}
 	return node
 }
